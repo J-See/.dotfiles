@@ -83,6 +83,17 @@ install_packages() {
     echo "All packages installed successfully."
 }
 
+install_snapper(){
+    echo "Installing Snapper..."  | awk '{print "\033[32m" $0 "\033[0m"}'
+    sudo pacman -S --noconfirm --needed btrfs-assistant
+    sudo pacman -S --noconfirm --needed grub-btrfs
+    sudo pacman -S --noconfirm --needed snap-pac-git
+    sudo pacman -S --noconfirm --needed snapper
+    sudo pacman -S --noconfirm --needed snapper-tools-git
+    sudo pacman -S --noconfirm --needed snapper-support
+
+}
+
 # install_packages
 
 # install_browser
@@ -97,6 +108,8 @@ show_help(){
         ["-i"]="[i]nstall required packages"
         ["-b"]="select prefferd [b]rowser"
         ["-e"]="select prefferd [e]ditor"
+        ["-s"]="install [s]napper"
+
     )
     echo "Usage: $0 [options]"  | awk '{print "\033[32m" $0 "\033[0m"}'
     echo ""
@@ -121,7 +134,7 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
-while getopts "hibe" opt; do
+while getopts "hibes" opt; do
     case $opt in
         h)
             show_help
@@ -135,6 +148,10 @@ while getopts "hibe" opt; do
         e)
             install_texteditor
             ;;
+        s)
+            install_snapper
+            ;;
+        
         \?)
             echo "Invalid option: -$OPTARG" >&2
             show_help
