@@ -7,9 +7,13 @@
 Execute post installation script which have following options.
 
 `-h`: for help
+
 `-i`: install required packages
+
 `-b`: choose browser
+
 `-e`: choose editor
+
 
 ```bash
 chmod +x ~/.dotfiles/scripts/.config/scripts/post_install_pak.sh
