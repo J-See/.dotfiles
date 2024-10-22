@@ -3,7 +3,8 @@
 # List of system packages to install
 packages=(
     git vim curl htop wget python python-pip neofetch zsh tmux zoxide fzf stow nodejs npm ranger w3m
-    
+    bat 
+
 )
 
 browser=(
