@@ -2,8 +2,8 @@
 
 # List of system packages to install
 packages=(
-    git vim curl htop wget python python-pip neofetch zsh tmux zoxide fzf neovim firefox chromium
-    stow nodejs npm visual-studio-code-bin
+    git vim curl htop wget python python-pip neofetch zsh tmux zoxide fzf stow nodejs npm ranger w3m
+    
 )
 
 browser=(
@@ -15,11 +15,12 @@ browser=(
 
 editors=(
     "Nano:sudo pacman -S nano"
-    "Vim:sudo pacman -S vim"
+    "Nvim:sudo pacman -S neovim"
     "Emacs:sudo pacman -S emacs"
     "Micro:sudo pacman -S micro"
     "Gedit:sudo pacman -S gedit"
     "Sublime Text:sudo pacman -S sublime-text"
+    "VSCode:sudo pacman -S visual-studio-code-bin"
 )
 
 

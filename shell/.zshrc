@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,14 +15,14 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_RUNTIME_DIR="/run/user/$UID"
 
-## Prompt theming setup
+## --Prompt theming setup
 ## for starship
-eval "$(starship init zsh)"
-if [ ! -d "$XDG_CONFIG_HOME/starship" ]; then
-   mkdir -p "$XDG_CONFIG_HOME/starship"
-   touch "$XDG_CONFIG_HOME/starship/starship.toml"
-fi
-export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+# eval "$(starship init zsh)"
+# if [ ! -d "$XDG_CONFIG_HOME/starship" ]; then
+#    mkdir -p "$XDG_CONFIG_HOME/starship"
+#    touch "$XDG_CONFIG_HOME/starship/starship.toml"
+# fi
+# export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 
 #@ for spaceship
 # if [ ! -d "$XDG_CONFIG_HOME/spaceship" ]; then
@@ -38,7 +45,7 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # # Add in Powerlevel10k
-# zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -139,3 +146,6 @@ eval "$(zoxide init --cmd cd zsh)"
 # if [[ $- == *i* ]] && command -v fastfetch &> /dev/null; then
 #     fastfetch --config examples/17.jsonc
 # fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
