@@ -9,8 +9,8 @@ colors: dict = {
 }
 
 packages: list = [
-    'git', 'vim', 'curl', 'htop', 'wget', 'python', 'python-pip', 'fastfetch', 'zsh',
-    'tmux', 'zoxide', 'fzf', 'stow', 'nodejs', 'npm', 'ranger', 'w3m', 'bat', 'fakeroot'
+    'paru', 'yay', 'git', 'vim', 'curl', 'htop', 'wget', 'python', 'python-pip', 'fastfetch', 
+    'zsh', 'tmux', 'zoxide', 'fzf', 'stow', 'nodejs', 'npm', 'ranger', 'w3m', 'bat', 'fakeroot', 
 ]
 
 editors: dict = {
